@@ -1,41 +1,129 @@
-
-
-
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Home</title>
-	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Machine Learning App</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
 
-	<header>
-		<div class="container">
-		<div id="brandname">
-			Machine Learning App with Flask
-		</div>
-		<h2>Spam Detector For Email Messages</h2>
-		
-	</div>
-	</header>
+      header {
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
 
-	<div class="ml-container">
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
 
-		<form action="{{ url_for('predict')}}" method="POST">
-		<p>Enter Your Message Here</p>
-		<!-- <input type="text" name="comment"/> -->
-		<textarea name="message" rows="6" cols="50"></textarea>
-		<br/>
+      #brandname {
+        font-size: 28px;
+        font-weight: bold;
+      }
 
-		<input type="submit" class="btn-info" value="predict">
-		
-	</form>
-		
-	</div>
+      .ml-container {
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        padding: 30px;
+        text-align: center;
+        width: 60%;
+      }
 
-	
-	
+      .ml-container p {
+        color: #007bff;
+        font-size: 20px;
+      }
 
-</body>
+      .ml-container textarea {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .btn-info {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .btn-disabled {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: none;
+        opacity: 0.5;
+      }
+
+      .btn-info:hover {
+        background-color: #0056b3;
+      }
+    </style>
+
+    <script>
+      function checkTextarea() {
+        var textarea = document.getElementById("messageTextarea");
+        var predictButton = document.getElementById("predictButton");
+
+        if (textarea.value.trim() === "") {
+          predictButton.disabled = true;
+          predictButton.classList.add("btn-disabled");
+        } else {
+          predictButton.disabled = false;
+          predictButton.classList.remove("btn-disabled");
+          predictButton.classList.add("btn-info");
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div id="brandname">Machine Learning App with Flask</div>
+        <h2>Spam Detector For Email Messages</h2>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="ml-container">
+        <form action="{{ url_for('predict')}}" method="POST">
+          <p>Enter Your Email Message Here</p>
+          <textarea
+            name="message"
+            id="messageTextarea"
+            rows="6"
+            oninput="checkTextarea()"
+          ></textarea>
+          <br />
+          <input
+            type="submit"
+            class="btn-disabled"
+            id="predictButton"
+            value="Predict"
+            disabled
+          />
+        </form>
+      </div>
+    </div>
+  </body>
 </html>

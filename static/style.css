@@ -1,58 +1,58 @@
-
-
-body{
-	font:15px/1.5 Arial, Helvetica,sans-serif;
-	padding: 0px;
-	background-color:#f4f3f3;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
-.container{
-	width:100%;
-	margin: auto;
-	overflow: hidden;
+.container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-header{
-	background:#03A9F4;#35434a;
-	border-bottom:#448AFF 3px solid;
-	height:120px;
-	width:100%;
-	padding-top:30px;
-
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
 }
 
-.main-header{
-			text-align:center;
-			background-color: blue;
-			height:100px;
-			width:100%;
-			margin:0px;
-		}
-#brandname{
-	float:left;
-	font-size:30px;
-	color: #fff;
-	margin: 10px;
+#brandname {
+  font-size: 36px;
 }
 
-header h2{
-	text-align:center;
-	color:#fff;
-
+.results {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 30px;
+  text-align: center;
+  width: 60%;
 }
 
+.results h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 
+.results .spam {
+  color: red;
+}
 
-.btn-info {background-color: #2196F3;
-	height:40px;
-	width:100px;} /* Blue */
-.btn-info:hover {background: #0b7dda;}
+.results .ham {
+  color: green;
+}
 
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
 
-.resultss{
-	border-radius: 15px 50px;
-    background: #345fe4;
-    padding: 20px; 
-    width: 200px;
-    height: 150px;
+  .results {
+    width: 80%;
+  }
 }

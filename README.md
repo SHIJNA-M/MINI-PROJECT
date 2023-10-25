@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# SPAM-MAIL-PREDICTION
-=======
 # Spam Mail Detection:
 
 ## Table of Content
@@ -67,10 +64,7 @@ pip install -r requirements.txt
 ## Credits
 
 - [Dataset Download](https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection)
-<<<<<<< HEAD
->>>>>>> 2e38477 (Spam Mail Detection)
-=======
 
-## Copyrights
-Sanjoy Biswas
->>>>>>> 36166e2 (Update README.md)
+## Copyright
+Sanjoy Biswas | Data Science | Machine Learning | Deep Learning
+
